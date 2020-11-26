@@ -56,4 +56,20 @@ public class Entry {
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public CostCentre getCostCentre() {
+        return costCentre;
+    }
+
+    public void setCostCentre(CostCentre costCentre) {
+        this.costCentre = costCentre;
+    }
 }
