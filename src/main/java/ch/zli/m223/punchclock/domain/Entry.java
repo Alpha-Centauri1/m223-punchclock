@@ -25,6 +25,14 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
+    @ManyToOne
+    @JoinColumn(name = "CATEGORY_ID")
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "COSTCENTRE_ID")
+    private CostCentre costCentre;
+
     public Long getId() {
         return id;
     }

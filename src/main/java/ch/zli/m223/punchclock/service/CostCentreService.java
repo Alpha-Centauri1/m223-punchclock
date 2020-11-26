@@ -1,5 +1,6 @@
 package ch.zli.m223.punchclock.service;
 
+import ch.zli.m223.punchclock.domain.Category;
 import ch.zli.m223.punchclock.domain.CostCentre;
 import ch.zli.m223.punchclock.repository.CostCentreRepository;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,9 @@ public class CostCentreService {
 
     public void deleteCostCentre(Long id) {
         costCentreRepository.deleteById(id);
+    }
+
+    public CostCentre updateCostCentre(CostCentre costCentre){
+        return costCentreRepository.save(costCentre);
     }
 }

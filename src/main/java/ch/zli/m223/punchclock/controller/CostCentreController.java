@@ -1,5 +1,6 @@
 package ch.zli.m223.punchclock.controller;
 
+import ch.zli.m223.punchclock.domain.Category;
 import ch.zli.m223.punchclock.domain.CostCentre;
 import ch.zli.m223.punchclock.service.CostCentreService;
 import org.springframework.http.HttpStatus;
@@ -34,5 +35,11 @@ public class CostCentreController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteCostCentre(@PathVariable Long id) {
         costCentreService.deleteCostCentre(id);
+    }
+
+    @PutMapping("{id}")
+    public CostCentre updateCostCentre(@RequestBody CostCentre costCentre, @PathVariable Long id){
+        costCentre.setId(id);
+        return costCentreService.updateCostCentre(costCentre);
     }
 }
